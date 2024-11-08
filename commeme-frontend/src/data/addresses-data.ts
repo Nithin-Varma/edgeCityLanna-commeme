@@ -35,7 +35,7 @@ export const CONSTANT_ADDRESSES = {
 		commemeFactory: "0x7B0EC53Dfcdb0032f0336e6f53419FA48Bc8FAdb",
 		legacyAddress: "0x8356D265646a397b2Dacf0e05A4973E7676597f4",
 		scanner:"https://unichain-sepolia.blockscout.com",
-		graphql: "http://localhost:42069",
+		graphql: "https://edgecitylanna-rpc.onrender.com",
 		tokenName: "ETH",
 		chain:unichainSepolia,
 	 
