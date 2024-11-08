@@ -13,8 +13,13 @@ export default createConfig({
     unichainSepolia: {
       chainId: 1301,
       transport: http(process.env.PONDER_RPC_URL_1301),
+
     },
 
+  },
+  database:{
+    kind:"postgres",
+    connectionString:"postgresql://ponder_owner:DFg0qk5Nylxt@ep-autumn-sky-a1qpxz91.ap-southeast-1.aws.neon.tech/ponder?sslmode=require"
   },
   contracts: {
     Commeme: {
