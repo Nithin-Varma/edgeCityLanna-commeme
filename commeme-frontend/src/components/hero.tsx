@@ -11,7 +11,6 @@ import {
   Sparkles, 
   TrendingUp, 
   Share2, 
-  Zap,
 } from "lucide-react"; // Add Lucide icons
 import { StickyScroll } from "./ui/sticky-scroll-reveal";
 
