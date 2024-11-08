@@ -227,7 +227,7 @@ export default function SwipeableStackCards({ commemes, chainId ,refetch}: { com
                   </div>
                   {card.poolAddress !== "0x0000000000000000000000000000000000000000" && (
                     <div className="mt-2">
-                      <a href={`https://www.sushi.com/swap?chainId=${chainData.chain.id}&token0=NATIVE&token1=${card.tokenAddress}`} target="_blank" rel="noopener noreferrer" className="text-blue-500">
+                      <a href={`https://app.uniswap.org?chainId=${chainData.chain.id}&token0=NATIVE&token1=${card.tokenAddress}`} target="_blank" rel="noopener noreferrer" className="text-blue-500">
                         Pool
                       </a>
                     </div>

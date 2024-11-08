@@ -128,64 +128,79 @@ export default function CreateMemeForm() {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center overflow-x-scroll">
-      <div className="text-xl  font-semibold">Create a meme</div>
-      <div className="my-4 grid w-full max-w-sm items-center gap-1.5">
-        {/* {inputFields.map((field, index) => (
-         
-        ))} */}
-        <div>
-          <Label htmlFor="chain">Select Which Blockchain (It's gasless to post a meme)</Label>
-          <RadioGroup defaultValue={selectedChain.toString()} onValueChange={e=>setSelectedChain(parseFloat(e))}>
-            <div className="flex items-center space-x-2">
-              <RadioGroupItem value={`${chainsIds[0]}`} id="option-one" />
-              <Label htmlFor="option-one">unichainSepolia</Label>
-            </div>
-            {/* <div className="flex items-center space-x-2">
-              <RadioGroupItem value={`${chainsIds[1]}`} id="option-two" />
-              <Label htmlFor="option-two">Polygon Mainnet</Label>
-            </div> */}
-          </RadioGroup>
-          <Label htmlFor={"name"}>Meme Name</Label>
-          <Input
-            type="text"
-            placeholder={"Meme Name"}
-            className="bg-slate-50"
-            value={memeName}
-            onChange={(e) => setMemeName(e.target.value)}
-          />
-          <Label htmlFor={"symbol"}>Meme Symbol</Label>
-          <Input
-            type="text"
-            placeholder={"Symbol"}
-            className="bg-slate-50"
-            value={memeSymbol}
-            onChange={(e) => setMemeSymbol(e.target.value)}
-          />
-          <Label htmlFor={"supply"}>Total Supply</Label>
-          <Input
-            type="number"
-            placeholder={"Supply"}
-            className="bg-slate-50"
-            value={totalSupply}
-            onChange={(e) => setTotalSupply(e.target.value)}
-          />
+    <div className="flex flex-col items-start w-full max-w-2xl mx-auto p-6">
+      <h1 className="text-2xl font-semibold mb-8">Create a meme</h1>
+      
+      <div className="w-full space-y-6">
+        <div className="space-y-4">
+          <div className="space-y-2 flex flex-col items-start">
+            <Label htmlFor="chain">Select Blockchain (Gasless meme posting)</Label>
+            <RadioGroup 
+              defaultValue={selectedChain.toString()} 
+              onValueChange={e => setSelectedChain(parseFloat(e))}
+              className="w-full"
+            >
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value={`${chainsIds[0]}`} id="option-one" />
+                <Label htmlFor="option-one">unichainSepolia</Label>
+              </div>
+            </RadioGroup>
+          </div>
 
-          <Label htmlFor={"description"}>Description</Label>
-          <Input
-            type="text"
-            placeholder={"Description"}
-            className="bg-slate-50"
-            value={memeDescription}
-            onChange={(e) => setMemeDescription(e.target.value)}
-          />
+          <div className="space-y-2 flex flex-col items-start">
+            <Label htmlFor="name">Meme Name</Label>
+            <Input
+              id="name"
+              type="text"
+              placeholder="Enter meme name"
+              className="w-full bg-slate-50"
+              value={memeName}
+              onChange={(e) => setMemeName(e.target.value)}
+            />
+          </div>
 
-          <Label htmlFor="image">Upload an image</Label>
-          <div className="grid gap-2">
+          <div className="space-y-2 flex flex-col items-start">
+            <Label htmlFor="symbol">Meme Symbol</Label>
+            <Input
+              id="symbol"
+              type="text"
+              placeholder="Enter symbol"
+              className="w-full bg-slate-50"
+              value={memeSymbol}
+              onChange={(e) => setMemeSymbol(e.target.value)}
+            />
+          </div>
+
+          <div className="space-y-2 flex flex-col items-start">
+            <Label htmlFor="supply">Total Supply</Label>
+            <Input
+              id="supply"
+              type="number"
+              placeholder="Enter total supply"
+              className="w-full bg-slate-50"
+              value={totalSupply}
+              onChange={(e) => setTotalSupply(e.target.value)}
+            />
+          </div>
+
+          <div className="space-y-2 flex flex-col items-start">
+            <Label htmlFor="description">Description</Label>
+            <Input
+              id="description"
+              type="text"
+              placeholder="Enter description"
+              className="w-full bg-slate-50"
+              value={memeDescription}
+              onChange={(e) => setMemeDescription(e.target.value)}
+            />
+          </div>
+
+          <div className="space-y-2 flex flex-col items-start">
+            <Label htmlFor="image">Upload an image</Label>
             <Input
               id="image"
               type="file"
-              className="bg-slate-50"
+              className="w-full bg-slate-50"
               accept="image/*"
               onChange={handleImageChange}
             />
@@ -195,17 +210,25 @@ export default function CreateMemeForm() {
                 alt="Preview"
                 width={300}
                 height={300}
-                className="aspect-square mx-auto rounded-md object-fill"
+                className="w-full max-w-sm aspect-square rounded-md object-cover mt-4"
               />
             )}
           </div>
         </div>
-        <div className="text-xl"> OR</div>
-        <Link href="/meme-template" className="text-blue-500 underline">
-          Use our meme template
-        </Link>
-        <Button className="mt-2" onClick={onDeploy}>
-          {loading ? "Loading" : "Create a meme"}
+
+        <div className="w-full flex flex-col items-center space-y-2 py-4">
+          <div className="text-xl">OR</div>
+          <Link href="/meme-template" className="text-blue-500 hover:text-blue-600 underline">
+            Use our meme template
+          </Link>
+        </div>
+
+        <Button 
+          className="w-full mt-4" 
+          onClick={onDeploy}
+          disabled={loading}
+        >
+          {loading ? "Creating..." : "Create meme"}
         </Button>
       </div>
     </div>
