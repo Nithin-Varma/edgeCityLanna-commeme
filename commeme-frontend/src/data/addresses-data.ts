@@ -1,4 +1,4 @@
-import { coreDao, polygon, unichainSepolia } from "viem/chains";
+import {unichainSepolia } from "viem/chains";
 
 
 
