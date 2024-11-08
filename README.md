@@ -18,19 +18,15 @@ This project is designed to create and manage memecoins based on community engag
      - `commemeFactory.sol`: The factory contract responsible for deploying new memecoins.
      - `anonVerifier.sol`: Verifies users using anon-Aadhaar.
      - `erc20Meme.sol`: The ERC20 token standard implementation for memecoins.
-     - `commeme.sol`: This is the main logic of the application, it is responsible for minting the erc20 tokens , creating the  sushiswap pool, air droping the tokens and donationg the rest to a social cause smart contract.
+     - `commeme.sol`: This is the main logic of the application, it is responsible for minting the erc20 tokens , creating the  uniswap pool, air droping the tokens and donationg the rest to a social cause smart contract.
    - **Helper Contracts**:
      - `safeMath.sol`: Provides mathematical functions to prevent overflows.
      - `ierc20.sol`: Interface for ERC20 tokens.
    - **Tech Stack**: Solidity, Hardhat
    - **Deployment**:
-     - Here is the Polygon deployments
+     - Here is the unichainSepoliya deployment
        ```bash
-       Commeme Factory: https://polygonscan.com/address/0x3c287EBA998789a4a8C88ec0b251bb08978bb980
-       ```
-     - Here is the Core Dao Mainnet deployments
-       ```bash
-       COmmeme Factory: https://scan.coredao.org/address/0xb8F55945296407B8f9a7095F0c71b221a257b2F2
+       Commeme Factory: https://unichain-sepolia.blockscout.com/address/0x7B0EC53Dfcdb0032f0336e6f53419FA48Bc8FAdb
        ```
 
 ### 3. **gasless**
@@ -42,12 +38,9 @@ This project is designed to create and manage memecoins based on community engag
 
 ### 4. **indexer**
    - **Description**: This module is responsible for indexing and fetching data using our custom subgraph setup.
-   - **Subfolders**:
-     - `commeme-coredao`: Contains configurations and scripts related to the Core DAO.
-     - `commeme-polygon`: Contains configurations and scripts related to the Polygon network.
-   - **Tech Stack**: Graph Protocol, Ponder
+     - `indexer`: Contains configurations and scripts related to the unichainSepolia.
+   - **Tech Stack**: Ponder
    - **Key Files**:
      - `ponder-config.ts`: Configuration for the Ponder indexing tool.
-     - `schema.graphql`: GraphQL schema used by the subgraph.
 
 
